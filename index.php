@@ -1,3 +1,27 @@
+<?php
+    session_start();
+    $sessionId = isset($_SESSION['id']) ?$_SESSION['id'] :'';
+    $sessionRole = isset($_SESSION['role']) ?$_SESSION['role'] :'';
+    echo "$sessionId $sessionRole";
+    if ( !$sessionId && !$sessionRole ) {
+        header( "location:login.php" );
+        die();
+    }
+
+    ob_start();
+
+    include_once "config.php";
+    $connection = mysqli_connect( DB_HOST, DB_USER, DB_PASSWORD, DB_NAME );
+    if ( !$connection ) {
+      //  echo mysqli_error( $connection );
+        throw new Exception( "Database cannot Connect" );
+    }
+
+    $id = isset($_REQUEST['id']) ? $_REQUEST['id']:'dashboard';
+    $action = isset($_REQUEST['action']) ?$_REQUEST['action']: '';
+?>
+
+
 
 <!-- saved from url=(0045)http://localhost/doan/index.php?id=addManager -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>2 admin

@@ -1,0 +1,29 @@
+body {
+  margin: auto;
+  max-width: 500px;
+}
+
+#title {
+  color: blue;
+}
+#label {
+  text-align: right;
+  color: blue;
+}
+#label1 {
+  color: red;
+}
+#radio {
+  color: red;
+  text-align: left;
+}
+#in {
+  text-align: left;
+  width: 250px;
+  border: 1px solid blue;
+  border-radius: 2px;
+  height: 20px;
+}
+#back{
+  text-align: left;
+}

@@ -1,4 +1,13 @@
+<?php
+    session_start();
+    $sessionId = isset($_SESSION['id']) ?$_SESSION['id'] :'';
+    $sessionRole = isset($_SESSION['role']) ?$_SESSION['role'] :'';
+    if ( $sessionId && $sessionRole ) {
+        header( "location:index.php" );
+        die();
+    }
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">

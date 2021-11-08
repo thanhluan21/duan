@@ -1056,7 +1056,46 @@
                         ob_end_flush();
                 }?>
            
-        
+           
+           <?php if ( 'upfile' == $id ) {?>
+          
+             <form method="post" action="importexccel.php" enctype="multipart/form-data" class="main__form">
+              <div class="form-group">
+                    <label for="exampleInputFile">Up file lên cơ sở dữ liệu</label>
+                     <input type="file" name="file">
+                     <td width="25%"><input type="submit" name="submit" class="btn btn-primary" /></td>
+                </div>
+                
+                </form>
+      
+            <div class="container">
+                <br />
+                  <h3 align="center">Tải dữ liệu từ file exccel để xem</h3>
+                 <br />
+            <div class="table-responsive">
+                  <span id="message"></span>
+                    <form method="post" id="load_excel_form" enctype="multipart/form-data">
+                     <table class="table">
+                          <tr>
+                            <td width="25%" align="right">Chọn file exccel</td>
+                               <td width="50%"><input type="file" name="select_excel" /></td>
+                           <td width="25%"><input type="submit" name="Gửi" class="btn btn-primary" /></td>
+                          </tr>
+                        </table>
+                   </form>
+                   <br />
+
+                        <div id="excel_area"></div>
+
+                     </div>
+             </div>
+             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+      
+                <?php }?>
+            
+
+
+
             
        
             <!-- ---------------------- Salesman ------------------------ -->
